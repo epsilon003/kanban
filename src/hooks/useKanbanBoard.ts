@@ -84,7 +84,7 @@ export const useKanbanBoard = (
           
           return prevColumns.map((col) => {
             if (col.id === oldColumn.id) {
-              return { ...col, taskIds: col.taskIds.filter((id) => id !== taskId) };
+              return { ...col, taskIds: col.taskIds.filter((id: string) => id !== taskId) };
             }
             if (col.id === newColumn.id) {
               return { ...col, taskIds: [...col.taskIds, taskId] };
@@ -110,7 +110,7 @@ export const useKanbanBoard = (
     setColumns((prevColumns) =>
       prevColumns.map((col) => ({
         ...col,
-        taskIds: col.taskIds.filter((id) => id !== taskId),
+        taskIds: col.taskIds.filter((id: string) => id !== taskId),
       }))
     );
   }, []);

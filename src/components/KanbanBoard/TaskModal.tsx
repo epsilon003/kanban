@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { KanbanTask, KanbanColumn } from './KanbanBoard.types';
 import { Modal } from '@/components/primitives/Modal';
 import { Button } from '@/components/primitives/Button';
-import clsx from 'clsx';
 
 interface TaskModalProps {
   task: KanbanTask | null;
