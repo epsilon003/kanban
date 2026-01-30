@@ -18,7 +18,6 @@ A production-grade, fully accessible Kanban board component built with React, Ty
 - Tag management
 - Due date tracking with overdue detection
 - Assignee avatars
-- WIP (Work In Progress) limits with visual warnings
 - Empty state handling
 
 ### Accessibility
