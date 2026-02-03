@@ -10,7 +10,7 @@ import {
   useSensors,
   closestCorners,
 } from '@dnd-kit/core';
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { KanbanViewProps, KanbanTask } from './KanbanBoard.types';
 import { KanbanColumn } from './KanbanColumn';
 import { KanbanCard } from './KanbanCard';
@@ -143,7 +143,10 @@ export const KanbanBoard: React.FC<KanbanViewProps> = ({
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
-        <div className="flex gap-4 h-full overflow-x-auto p-4">
+        <div 
+          className="flex flex-wrap gap-4 h-full p-4 overflow-y-auto"
+          data-tour="columns"
+        >
           {columns.map((column) => {
             const columnTasks = column.taskIds
               .map((taskId) => tasks[taskId])

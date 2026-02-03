@@ -53,6 +53,7 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({ task, onEdit }) => {
       role="button"
       tabIndex={0}
       aria-label={`Task: ${task.title}. Status: ${task.status}${task.priority ? `. Priority: ${task.priority}` : ''}. Press Enter to edit.`}
+      data-tour="task-card"
     >
       <div className="flex items-start justify-between mb-2 gap-2">
         <h4 className="font-medium text-sm text-neutral-900 dark:text-neutral-100 line-clamp-2 flex-1">
@@ -71,7 +72,7 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({ task, onEdit }) => {
       </div>
       
       {task.description && (
-        <p className="text-xs text-neutral-600 mb-2 line-clamp-2">
+        <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-2 line-clamp-2">
           {task.description}
         </p>
       )}
@@ -81,7 +82,7 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({ task, onEdit }) => {
           {task.tags?.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded"
+              className="text-xs bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-2 py-0.5 rounded"
             >
               {tag}
             </span>

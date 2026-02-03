@@ -28,11 +28,11 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   };
   
   const isNearLimit = column.maxTasks && tasks.length >= column.maxTasks * 0.8;
-  const isAtLimit = !!column.maxTasks && tasks.length >= column.maxTasks;
+  const isAtLimit = column.maxTasks && tasks.length >= column.maxTasks;
   
   return (
     <div
-      className="flex flex-col h-full bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 min-w-[280px] max-w-[320px] shrink-0"
+      className="flex flex-col h-fit max-h-[600px] bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] min-w-[280px] shrink-0"
       role="region"
       aria-label={`${column.title} column. ${tasks.length} tasks${column.maxTasks ? `, limit ${column.maxTasks}` : ''}.`}
     >
@@ -96,6 +96,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
           onClick={handleCreateTask}
           className="w-full justify-start"
           disabled={isAtLimit}
+          data-tour="add-task"
         >
           <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
