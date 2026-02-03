@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { KanbanBoard } from './components/KanbanBoard/KanbanBoard';
 import { LoginPage } from './components/Auth/LoginPage';
@@ -117,6 +117,11 @@ const App = () => {
     }
   };
 
+  // Wrapper for sign in to handle return type
+  const handleSignIn = async () => {
+    await signInWithGoogle();
+  };
+
   // Show loading spinner during auth
   if (authLoading) {
     return (
@@ -131,7 +136,7 @@ const App = () => {
 
   // Show login page if not authenticated
   if (!user) {
-    return <LoginPage onSignIn={signInWithGoogle} loading={authLoading} error={authError} />;
+    return <LoginPage onSignIn={handleSignIn} loading={authLoading} error={authError} />;
   }
 
   // Show loading spinner while fetching user data

@@ -27,7 +27,7 @@ export const OnboardingTutorial: React.FC<OnboardingTutorialProps> = ({ userId }
       target: 'body',
       content: (
         <div>
-          <h2 className="text-xl font-bold mb-2">Welcome to Your Kanban Board! 👋</h2>
+          <h2 className="text-xl font-bold mb-2">Welcome to Your Kanban Board!</h2>
           <p>Let's take a quick tour to help you get started. This will only take a minute!</p>
         </div>
       ),

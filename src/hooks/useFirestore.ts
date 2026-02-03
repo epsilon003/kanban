@@ -2,11 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { 
   collection,
   doc,
-  getDocs,
   setDoc,
   deleteDoc,
-  query,
-  where,
   onSnapshot,
   serverTimestamp
 } from 'firebase/firestore';

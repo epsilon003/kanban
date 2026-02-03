@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { User } from 'firebase/auth';
 import { Avatar } from './Avatar';
-import { Button } from './Button';
 
 interface UserMenuProps {
   user: User;

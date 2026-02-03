@@ -28,7 +28,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   };
   
   const isNearLimit = column.maxTasks && tasks.length >= column.maxTasks * 0.8;
-  const isAtLimit = column.maxTasks && tasks.length >= column.maxTasks;
+  const isAtLimit = !!(column.maxTasks && tasks.length >= column.maxTasks);
   
   return (
     <div
