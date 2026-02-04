@@ -158,7 +158,7 @@ export const useFirestore = (userId: string | null) => {
         title: column.title,
         color: column.color,
         taskIds: column.taskIds,
-        maxTasks: column.maxTasks,
+        maxTasks: column.maxTasks ?? null,
         updatedAt: serverTimestamp(),
       }, { merge: true });
     } catch (err) {

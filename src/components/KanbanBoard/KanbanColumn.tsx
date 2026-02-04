@@ -32,8 +32,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   
   return (
     <div
-      className="flex flex-col h-fit max-h-[600px] bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] min-w-[280px] shrink-0"
-      role="region"
+      className="flex flex-col bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] min-w-[280px] max-h-[calc(100vh-200px)]"
       aria-label={`${column.title} column. ${tasks.length} tasks${column.maxTasks ? `, limit ${column.maxTasks}` : ''}.`}
     >
       {/* Column Header */}
